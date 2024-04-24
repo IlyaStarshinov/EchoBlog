@@ -1,0 +1,41 @@
+{{ define "registration" }}
+{{ template "headLog" }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <style>
+        .center-block {
+            margin: 0 auto;
+            width: 300px; /* Ширина блока регистрации */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-block">
+        <h2>Регистрация</h2>
+        <form action="/register" method="POST">
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="firstName">Имя:</label><br>
+            <input type="text" id="firstName" name="firstName" required><br><br>
+            <label for="lastName">Фамилия:</label><br>
+            <input type="text" id="lastName" name="lastName" required><br><br>
+            <label for="patronymic">Отчество:</label><br>
+            <input type="text" id="patronymic" name="patronymic"><br><br>
+            <label for="birthdate">Дата рождения:</label><br>
+            <input type="date" id="birthdate" name="birthdate" required><br><br>
+            <label for="password">Пароль:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit"onclick="location.href='/register'">Зарегистрироваться</button>
+        </form>
+    </div>
+</body>
+</html>
+
+{{ template "footer" }}
+{{ end }}

@@ -1,0 +1,35 @@
+{{ define "login" }}
+{{ template "headLog" }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="assets/css2/login.css"> <!-- Ссылка на ваш CSS-файл -->
+    <style>
+        .center-block {
+            margin: 0 auto;
+            width: 300px; /* Ширина блока регистрации */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-block">
+        <h2>Вход</h2>
+        <form action="." method="POST">
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Пароль:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit"onclick="location.href='/register'">Регистрация</button>
+            <button type="button"onclick="location.href='/feed'" >Войти</button>
+        </form>
+    </div>
+</body>
+</html>
+
+{{ template "footer" }}
+{{ end }}

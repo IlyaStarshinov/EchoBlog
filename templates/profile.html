@@ -1,0 +1,27 @@
+{{ define "profile" }}
+{{ template "header" }}
+
+<div class="container">
+    <h1>Мой профиль</h1>
+
+    <!-- Информация о пользователе -->
+    <div class="profile-info">
+        <p><strong>Имя:</strong> {{ .Username }}</p>
+        <p><strong>Email:</strong> {{ .Email }}</p>
+        <!-- Другие поля информации о пользователе, если необходимо -->
+    </div>
+
+    <!-- Отображение списка постов пользователя -->
+    <h2>Мои посты</h2>
+    <div class="posts">
+        {{ range .Posts }}
+        <div class="post">
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Content }}</p>
+        </div>
+        {{ end }}
+    </div>
+</div>
+
+{{ template "footer" }}
+{{ end }}
